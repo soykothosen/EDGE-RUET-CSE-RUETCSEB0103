@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteBase /Project01/
+
+RewriteRule ^home$ page1.php [L]
+RewriteRule ^page1$ page1.php [L]
+RewriteRule ^page2$ page2.php [L]
