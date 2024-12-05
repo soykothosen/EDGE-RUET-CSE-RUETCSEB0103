@@ -74,9 +74,22 @@ switch ($request) {
         $address = $_POST['address'];
     
         // Display or save data (For demonstration, we're just echoing)
-        // 
+
+
+          $sql1 = "INSERT INTO `users` (`userid`, `username`, `password`, `university`) VALUES (NULL, 'Shadib', '123456', 'AHC');";
+            $result1 = $conn->query($sql1);
+
+            if ($result1 === false) {
+
+                    echo "Error executing query: " . $conn->error;  // Print the error message
+
+            } else {
+
+             echo "Success Insert Query";
+
+            }
         
-        include "views/profile.php";
+        #include "views/profile.php";
     }
     break;
 
