@@ -1,0 +1,63 @@
+User
+
+USer id, Name, Contact  Number, Password, Division, District, thana, DOB, Referid, Referer Id
+
+
+Doctor
+
+id, Name, Designation, Hospital Address, Time, Div, Dis, Thana, Sponsor
+
+
+Hospital
+
+id, Hospital name, Div, Dis, Thana, Lat, Long
+
+
+
+API
+
+
+Database create
+
+User
+Log In - মোবাইল নাম্বার ও পাসওয়ার্ড দিবো , ইউজার তথ্য পাওয়া যাবে  - select * where  - 
+
+Login Route -
+Main Domain/login
+
+SELECT * FROM `user` WHERE phonenumber = "01784286885" AND password = "123456";
+
+SELECT * FROM `user` WHERE phonenumber = "01784286885";
+
+
+User Registration - ইউজার তথ্য দিবে রেজিস্ট্রেশন   insert
+
+INSERT INTO `user` (`userid`, `username`, `phonenumber`, `password`, `division`, `dis`, `thana`, `DoB`, `ReferId`, `RefererId`) VALUES (NULL, 'Soykot16', '01784286881', '123456', 'Rajshahi', 'Bogura', 'Shaibgonj', '1997-11-03', NULL, NULL);
+
+
+
+Edit User update
+
+
+
+
+Doctor Registration
+Get Doctor
+Edit Doctor
+
+
+
+Hospital Reg
+Get Hospital
+Edit Hospital
+
+
+
+
+
+
+
+
+
+
+
