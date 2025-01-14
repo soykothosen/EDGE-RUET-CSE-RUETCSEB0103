@@ -32,8 +32,14 @@ Route::get('/getdata', function () {
 
 Route::post('/addcontactdata', function (Request $request) {
     #return "Data Added";
-    return $request;
+    #return $request;
     #return $request->name;
+   $result = DB::insert(("INSERT INTO `contact` (`id`, `name`, `email`, `sub`, `message`) VALUES (NULL, '$request->name', '$request->email', '$request->subject', '$request->message');") );  
+
+   #return view('index');
+   return redirect('/');
+   
+
 });
 
 Route::get('/form', function () {
@@ -53,6 +59,13 @@ Route::get('/getSocialMediaLink', function () {
     #return $result[0]->name;
     return $result[1]->link;
     #return 'All Link of Social Media';
+
+
 });
+
+Route::redirect('/new','/');
+
+
+
 
 
