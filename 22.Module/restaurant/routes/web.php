@@ -3,6 +3,7 @@
 #use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 Route::get('/laravel', function () {
     return view('welcome');
@@ -22,9 +23,10 @@ Route::get('/contact', function () {
 
 Route::get('/getdata', function () {
     
-    #$result = select('SELECT * FROM ?',[`testtable`]);
+    #$result = DB::select( DB::raw("SELECT * FROM some_table WHERE some_col = '$someVariable'") );
 
-    #return $result;
+    $result = DB::select(("SELECT * FROM `testtable`") );
+    return $result[0]->name;
     #return view('contact');
 });
 
@@ -42,6 +44,15 @@ Route::get('/form', function () {
 Route::post('/formdata', function (Request $request) {
     
     return $request;
+});
+
+Route::get('/getSocialMediaLink', function () {
+
+    $result = DB::select(("SELECT * FROM `sociallink`") );
+    #$result = DB::select(("SELECT * FROM `sociallink` WHERE id = 2") );
+    #return $result[0]->name;
+    return $result[1]->link;
+    #return 'All Link of Social Media';
 });
 
 
